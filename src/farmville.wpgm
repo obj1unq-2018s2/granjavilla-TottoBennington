@@ -1,0 +1,35 @@
+import wollok.game.*
+import hector.*
+import maiz.*
+import tomaco.*
+import trigo.*
+program farmville {
+	// CONFIG.
+	game.title('Farmville')
+	game.height(10)
+	game.width(10)
+	game.ground('ground.png')
+	
+	// VISUALES
+	game.addVisualCharacter(hector)
+	
+	
+	// TECLADO
+	keyboard.m().onPressDo{
+		hector.plantarMaiz()
+	}
+	keyboard.t().onPressDo{
+		hector.plantarTrigo()
+	}
+	keyboard.o().onPressDo{
+		hector.plantarTomaco()
+	}
+	keyboard.r().onPressDo{
+		hector.regar()
+	}
+	
+	// COLISIONES
+	
+	//game.whenCollideDo(hector, {planta => planta.serRegada()})
+	game.start()
+}
